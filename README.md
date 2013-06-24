@@ -6,8 +6,8 @@ Extended version of PHP_CodeSniffer's PSR2 rule set.
 While CodeSniffer's PSR2 checking is excellent and following the PSR2 standard,
 it is not checking all things I would like to be checked (far from it!)
 
-The PSR standards only describe code styling, but lack things like PHPDoc.
-Also there are a couple of more checks that can be done to make sure my code looks clean and healthy.
+The PSR standards only describe code styling, but lacks things like PHPDocs.
+Also there are a couple (/bunch/shitload) more checks that can be done to make sure my code looks clean and healthy.
 
 The solution? I've created my own standard for PHP_CodeSniffer. Below a list of the additions I've made to the current PSR2 standard.
 
@@ -22,7 +22,7 @@ The following addition check are done using this rule set:
 - Empty catch clause must at least have comment
 - Parses and verifies the doc comments for functions
     * A comment exists
-    * There is a blank newline after the short descriptio
+    * There is a blank newline after the short description
     * There is a blank newline between the long and short description
     * There is a blank newline between the long description and tags
     * Parameter names represent those in the method
