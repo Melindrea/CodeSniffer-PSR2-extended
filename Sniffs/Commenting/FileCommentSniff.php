@@ -78,7 +78,7 @@ class PSR2Extended_Sniffs_Commenting_FileCommentSniff
             'order_text'     => 'follows @author',
         ),
         'license'    => array(
-            'required'       => true,
+            'required'       => false,
             'allow_multiple' => false,
             'order_text'     => 'follows @copyright (if used) or @author',
         ),
