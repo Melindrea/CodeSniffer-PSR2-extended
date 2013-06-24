@@ -198,16 +198,6 @@ class PSR2Extended_Sniffs_Arrays_ArrayDeclarationSniff implements PHP_CodeSniffe
         if ($tokens[$lastContent]['line'] !== ($tokens[$arrayEnd]['line'] - 1)) {
             $error = 'Closing parenthesis of array declaration must be on a new line';
             $phpcsFile->addError($error, $arrayEnd, 'CloseBraceNewLine');
-        } else if ($tokens[$arrayEnd]['column'] !== $keywordStart) {
-            // Check the closing bracket is lined up under the a in array.
-            $expected = $keywordStart;
-            $found    = $tokens[$arrayEnd]['column'];
-            $error    = 'Closing parenthesis not aligned correctly; expected %s space(s) but found %s';
-            $data     = array(
-                $expected,
-                $found,
-            );
-            $phpcsFile->addError($error, $arrayEnd, 'CloseBraceNotAligned', $data);
         }
 
         $nextToken  = $stackPtr;
@@ -416,17 +406,6 @@ class PSR2Extended_Sniffs_Arrays_ArrayDeclarationSniff implements PHP_CodeSniffe
             }
 
 
-            if ($tokens[$index['index']]['column'] !== $indicesStart) {
-                $error = 'Array key not aligned correctly; expected %s spaces but found %s';
-                $data  = array(
-                    ($indicesStart - 1),
-                    ($tokens[$index['index']]['column'] - 1),
-                );
-                $phpcsFile->addError($error, $index['index'], 'KeyNotAligned', $data);
-                continue;
-            }
-
-
             if ($tokens[$index['arrow']]['column'] !== $arrowStart) {
                 $expected = ($arrowStart - (strlen($index['index_content']) + $tokens[$index['index']]['column']));
                 $found    = ($tokens[$index['arrow']]['column'] - (strlen($index['index_content']) + $tokens[$index['index']]['column']));
@@ -440,18 +419,6 @@ class PSR2Extended_Sniffs_Arrays_ArrayDeclarationSniff implements PHP_CodeSniffe
                 continue;
             }
 
-
-            if ($tokens[$index['value']]['column'] !== $valueStart) {
-                $expected = ($valueStart - (strlen($tokens[$index['arrow']]['content']) + $tokens[$index['arrow']]['column']));
-                $found    = ($tokens[$index['value']]['column'] - (strlen($tokens[$index['arrow']]['content']) + $tokens[$index['arrow']]['column']));
-
-                $error = 'Array value not aligned correctly; expected %s space(s) but found %s';
-                $data  = array(
-                    $expected,
-                    $found,
-                );
-                $phpcsFile->addError($error, $index['arrow'], 'ValueNotAligned', $data);
-            }
 
 
             // Check each line ends in a comma.
