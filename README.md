@@ -49,15 +49,18 @@ The following addition check are done using this rule set:
     * There is a blank newline after the short description
     * There is a blank newline between the long and short description
     * There is a blank newline between the long description and tags
-    * A PHP version is specified
     * Verifies the order of the tags
     * Verifies the indentation of each tag
+    * Verifies existence of required @copyright tag
+    * Verifies existence of required @link tag
+    * Verifies existence of required @license tag
     * Verifies required and optional tags and the format of their content
 - Parses and verifies the doc comments for classes
     * A doc comment exists
     * There is a blank newline after the short description
     * There is a blank newline between the long and short description
     * There is a blank newline between the long description and tags
+    * Verifies existence of required @author tag
     * Verifies the order of the tags
     * Verifies the indentation of each tag
     * Verifies required and optional tags and the format of their content
@@ -73,6 +76,7 @@ The following addition check are done using this rule set:
 - Verifies that all arithmetic operations are bracketed
 - Verifies that there is only one value assignment on a line, and that it is the first thing on the line
 - Verifies that any use of Double Quotes ("") are warranted
+- Verifies that there are spaces between the concatenation operator (.) and the strings being concatenated
 
 ### 3. Classes
 - Verifies that the same class (or interface name) isn't declared in multiple files
