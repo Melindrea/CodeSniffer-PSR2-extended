@@ -77,13 +77,11 @@
 
     <!-- Other -->
     <rule ref="Generic.PHP.DeprecatedFunctions" />
-    <rule ref="Generic.PHP.ForbiddenFunctions" />
     <rule ref="Pear.Files.IncludingFile" />
     <rule ref="Squiz.PHP.CommentedOutCode" />
     <rule ref="Squiz.PHP.DisallowSizeFunctionsInLoops" />
     <rule ref="Squiz.PHP.DiscouragedFunctions" />
     <rule ref="Squiz.PHP.Eval" />
-    <rule ref="Squiz.PHP.ForbiddenFunctions" />
     <rule ref="Squiz.PHP.GlobalKeyword" />
     <rule ref="Squiz.PHP.Heredoc" />
     <rule ref="Squiz.PHP.InnerFunctions" />
